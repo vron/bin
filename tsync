@@ -1,0 +1,6 @@
+#/bin/bash
+# Sync the time to a time server, usefull in a virtualbox environment where ubuntu scews
+set -e
+service ntp stop
+ntpd -gq
+service ntp start
