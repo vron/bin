@@ -1,0 +1,5 @@
+#!/bin/bash
+
+az vm start -g ViktorCompute -n vc01
+echo "Connect to jupyter on https://dsvm2xbsj6v4iea76.northeurope.cloudapp.azure.com:8000/"
+ssh vron@dsvm2xbsj6v4iea76.northeurope.cloudapp.azure.com

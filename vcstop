@@ -1,0 +1,3 @@
+#!/bin/bash
+
+az vm deallocate -g ViktorCompute -n vc01
