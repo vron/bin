@@ -1,6 +1,12 @@
 #!/bin/bash
 
-PORT=${1:-"6006"}
+#PORT=${1:-"6006"}
 
-echo "Tunneling http:$PORT to  https://dsvm2xbsj6v4iea76.northeurope.cloudapp.azure.com"
-ssh -L "0.0.0.0:$PORT:0.0.0.0:$PORT" vron@dsvm2xbsj6v4iea76.northeurope.cloudapp.azure.com
+#echo "Tunneling http:$PORT to  https://dsvm2xbsj6v4iea76.northeurope.cloudapp.azure.com"
+#ssh -L "0.0.0.0:$PORT:0.0.0.0:$PORT" vron@dsvm2xbsj6v4iea76.northeurope.cloudapp.azure.com
+
+export PROJECT_ID="deepart-259120"
+export ZONE="europe-west1-b"
+export INSTANCE_NAME="deep01-vm"
+gcloud compute ssh --project $PROJECT_ID --zone $ZONE \
+  $INSTANCE_NAME -- -L 8080:localhost:8080 -L 6006:localhost:6006

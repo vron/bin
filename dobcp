@@ -6,7 +6,7 @@ folders=(
      "$HOME/projects"
      "$HOME/Desktop"
      "$HOME/Pictures/PhotoLibrary"
-     "$HOME/Pictures/Photos Library.photoslibrary"
+     "$HOME/Pictures/Lightroom"
      #"$HOME/go/src"
 )
 DATE=`date +%Y-%m-%d`
@@ -35,7 +35,7 @@ echo "Starting bcp"
 
 for Path in "${folders[@]}"
 do
-    echo "Starting Backup of $Path $DATE'"
-    pk-put -verbose -logcache file --permanode --title="Backup of $Path $DATE" --tag=backup,bcp "$Path"
+    echo "Starting Backup of $Path $DATE"
+    pk-put -verbose file --permanode --title="Backup of $Path $DATE" --tag=backup,bcp "$Path"
     echo "done"
 done

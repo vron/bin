@@ -1,3 +1,7 @@
 #!/bin/bash
 
-az vm deallocate -g ViktorCompute -n vc01
+# az vm deallocate -g ViktorCompute -n vc01
+export PROJECT_ID="deepart-259120"
+export ZONE="europe-west1-b"
+export INSTANCE_NAME="deep01-vm"
+gcloud compute instances stop  --project $PROJECT_ID --zone $ZONE "deep01-vm"
